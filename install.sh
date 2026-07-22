@@ -9,7 +9,7 @@ git="github.com"; grep -q "^140.82.114.3 $git" /etc/hosts || {
     printf "#$git\n140.82.114.3 $git\n185.199.110.154 github.githubassets.com\n185.199.110.133 camo.githubassets.com\n" >> /etc/hosts; 
     /etc/init.d/dnsmasq restart 2>/dev/null; 
 }; 
-echo -e "\033[0;32mGitHub hosts добавлены\033[0m"
+echo -e "Гитхаб разлочен"
 
 # Скачивание и установка темы Aurora
 cd /tmp || exit 1
