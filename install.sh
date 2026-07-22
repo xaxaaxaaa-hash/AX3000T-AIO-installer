@@ -16,7 +16,7 @@ apk add --allow-untrusted luci-theme-aurora.apk || {
 }
 
 # Установка sing-box-extended
-uclient-fetch -O sing-box-extended.apk https://github.com/shtorm-7/sing-box-extended/releases/download/v1.13.14-extended-2.5.1/sing-box-extended_1.13.14-extended-2.5.1_openwrt_aarch64_cortex-a53.apk || {
+uclient-fetch -O sing-box-extended.apk https://github.com/shtorm-7/sing-box-extended/releases/download/v1.13.14-extended-2.5.2/sing-box-extended_1.13.14-extended-2.5.2_openwrt_aarch64_cortex-a53.apk || {
     echo "Ошибка загрузки sing-box-extended. Есть 22 мегабайта?"
     exit 1
 }
