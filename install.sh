@@ -4,6 +4,13 @@ apk update && apk upgrade && apk add luci-i18n-base-ru || {
     exit 1
 }
 
+# Добавление GitHub в hosts (обход блокировок)
+git="github.com"; grep -q "^140.82.114.3 $git" /etc/hosts || { 
+    printf "#$git\n140.82.114.3 $git\n185.199.110.154 github.githubassets.com\n185.199.110.133 camo.githubassets.com\n" >> /etc/hosts; 
+    /etc/init.d/dnsmasq restart 2>/dev/null; 
+}; 
+echo -e "\033[0;32mGitHub hosts добавлены\033[0m"
+
 # Скачивание и установка темы Aurora
 cd /tmp || exit 1
 uclient-fetch -O luci-theme-aurora.apk https://github.com/eamonxg/luci-theme-aurora/releases/latest/download/luci-theme-aurora-1.1.0-r20260711.apk || {
